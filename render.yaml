@@ -1,0 +1,12 @@
+services:
+  - type: worker
+    name: telegram-auto-delete-bot
+    env: python
+    pythonVersion: 3.12.0
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: OWNER_ID
+        sync: false
